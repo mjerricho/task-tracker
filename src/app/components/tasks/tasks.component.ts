@@ -21,4 +21,17 @@ export class TasksComponent implements OnInit {
     // this tasks = the tasks we get from observable
   }
 
+  deleteTask(task: Task) {
+    this.taskService
+      .deleteTask(task) // call the task service
+      .subscribe( // then filter from UI
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))); 
+  }
+
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService 
+      .updateTaskReminder(task) // update the server
+      .subscribe();
+  }
 }
