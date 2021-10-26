@@ -38,4 +38,9 @@ export class TaskService {
     // we pass in data -> pass in header and content type
     // we update the server!
   }
+
+  // write post request for adding task
+  addTask(task: Task): Observable<Task>{ 
+    return this.http.post<Task>(this.apiURL, task, httpOptions)
+  }
 }

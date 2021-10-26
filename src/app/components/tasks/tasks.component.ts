@@ -17,8 +17,10 @@ export class TasksComponent implements OnInit {
    }
 
   ngOnInit(): void { // void means it does not return anything
-    this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks); // like a promise, do a .then
-    // this tasks = the tasks we get from observable
+    this.taskService
+      .getTasks()
+      .subscribe((tasks) => this.tasks = tasks); // like a promise, do a .then
+      // this tasks = the tasks we get from observable
   }
 
   deleteTask(task: Task) {
@@ -33,5 +35,12 @@ export class TasksComponent implements OnInit {
     this.taskService 
       .updateTaskReminder(task) // update the server
       .subscribe();
+  } 
+
+  // update the server to include the new task
+  addTask(task: Task) {
+    this.taskService
+      .addTask(task)
+      .subscribe((task) => (this.tasks.push(task)));
   }
 }
