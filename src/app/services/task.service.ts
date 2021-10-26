@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 // being in injectable, applied at application level
+import { Observable, of } from 'rxjs';
 import { Task } from '../Task';
 import { TASKS } from '../mock-tasks';
 
@@ -10,7 +11,9 @@ export class TaskService {
 
   constructor() { }
 
-  getTasks(): Task[] {  // fundtion returns type task
-    return TASKS;
-  }
+  getTasks(): Observable<Task[]> {  // function returns type task
+    const tasks = of(TASKS); // make task an observable
+    // we subscribe to an observable -> constantly watch it
+    return tasks;
+  } // how to make this an observable
 }
