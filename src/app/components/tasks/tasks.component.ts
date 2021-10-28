@@ -35,7 +35,7 @@ export class TasksComponent implements OnInit {
     this.taskService 
       .updateTaskReminder(task) // update the server
       .subscribe();
-  } 
+  }
 
   // update the server to include the new task
   addTask(task: Task) {
@@ -44,3 +44,4 @@ export class TasksComponent implements OnInit {
       .subscribe((task) => (this.tasks.push(task)));
   }
 }
+
