@@ -28,7 +28,6 @@ export class TaskService {
 
   deleteTask(task: Task): Observable<Task> { // delete from server
     const url = `${this.apiURL}/${task.id}`; // create the url
-    console.log("deleteTask called")
     return this.http.delete<Task>(url); // return the delete request to the server
   }
 
