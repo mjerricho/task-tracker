@@ -12,8 +12,8 @@ export class TasksComponent implements OnInit {
 
   tasks: Task[] = []; // let tasks be the mock data
 
-  constructor(private taskService: TaskService) { // take in anything from getTasks() task.service
-
+  constructor(private taskService: TaskService) { 
+    // take in anything from getTasks() task.service
    }
 
   ngOnInit(): void { // void means it does not return anything
