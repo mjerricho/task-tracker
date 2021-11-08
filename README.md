@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## JSON local server 
 
-Run `npm run server` to set up the local JSON server. Navigate to `http://localhost:5000/tasks` to look at the database. 
+Run `npm run server` to set up the local JSON server. Navigate to `http://localhost:3000/tasks` to look at the database. 
 
 ## Code scaffolding
 
